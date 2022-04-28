@@ -1,5 +1,12 @@
 {
-  "private": true,
+  "name": "Vue To React",
+  "description": "when a Vuer is transforming into a Reacter.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ouduidui/[name].git"
+  },
+  "author": "Dewey Ou <oushihao97@gmail.com>",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
