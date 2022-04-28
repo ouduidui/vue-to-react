@@ -139,4 +139,48 @@ const App = () => {
       },
     ],
   },
+  {
+    id: 'computed',
+    label: 'computed',
+    data: [
+      {
+        title: 'Vue',
+        html: '/computed/vue.html',
+        code: `
+const App = {
+  template: \`
+    <div>count: {{count}}</div>
+    <div>doubleCount: {{doubleCount}}</div>
+    <button @click="count++">Add</button>
+  \`,
+  data() {
+    return {
+      count: 1
+    }
+  },
+  computed: {
+    doubleCount() {
+      return this.count * 2
+    }
+  }
+}`,
+      },
+      {
+        title: 'React',
+        html: '/computed/react.html',
+        code: `
+const App = () => {
+  const [count, setCount] = useState(1)
+  const doubleCount = useMemo(() => count * 2, [count])
+  return (
+    <div>
+      <div>count: {count}</div>
+      <div>doubleCount: {doubleCount}</div>
+      <button onClick={() => setCount(count + 1)}>Add</button>
+    </div>
+  )
+}`,
+      },
+    ],
+  },
 ]
