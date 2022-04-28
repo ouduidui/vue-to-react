@@ -103,4 +103,40 @@ const App = () => {
       },
     ],
   },
+  {
+    id: 'v-for',
+    label: 'v-for',
+    data: [
+      {
+        title: 'Vue',
+        html: '/vFor/vue.html',
+        code: `
+const App = {
+  template: \`
+    <li v-for="(item, index) in arr" :key="key">
+      {{item}}
+    </li>
+  \`,
+  data() {
+    return {
+      arr: [1,2,3,4,5]
+    }
+  }
+}`,
+      },
+      {
+        title: 'React',
+        html: '/vFor/react.html',
+        code: `
+const App = () => {
+  const arr = [1,2,3,4,5]
+  return arr.map((item, index) => (
+      <li key={index}>
+        {item}
+      </li>
+    ))
+}`,
+      },
+    ],
+  },
 ]
