@@ -1,8 +1,3 @@
 {
-  "extends": [
-    "@ouduidui/eslint-config-basic"
-  ],
-  "rules": {
-    "no-undef": "off"
-  }
+  "extends": ["@ouduidui/eslint-config-vue"]
 }
