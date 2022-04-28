@@ -1,0 +1,24 @@
+{
+  "name": "vue-vs-react",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ouduidui/vue-vs-react.git"
+  },
+  "author": "Dewey Ou",
+  "scripts": {
+    "dev": "live-server --open='./src' --port=3333 --watch='./src'",
+    "lint": "eslint --ext .js,.html"
+  },
+  "bugs": {
+    "url": "https://github.com/ouduidui/vue-vs-react/issues"
+  },
+  "homepage": "https://github.com/ouduidui/vue-vs-react#readme",
+  "devDependencies": {
+    "@ouduidui/eslint-config-basic": "^0.1.1",
+    "eslint": "^8.14.0",
+    "live-server": "^1.2.2"
+  }
+}
