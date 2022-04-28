@@ -17,7 +17,7 @@ defineProps<{
   <div font-mono text="2xl center" mb-2>
     {{ compare.label }}
   </div>
-  <div font-mono grid="~ cols-2" gap="x-10 y-5" w-90vw mb-5>
+  <div font-mono grid="~ cols-2" gap="x-10 y-5" w-90vw mb-20>
     <div
       v-for="(item, index) in compare.data"
       :key="index"
