@@ -183,4 +183,52 @@ const App = () => {
       },
     ],
   },
+  {
+    id: 'watch',
+    label: 'watch',
+    data: [
+      {
+        title: 'Vue',
+        html: '/watch/vue.html',
+        code: `
+const App = {
+  template: \`
+    <div>count: {{count}}</div>
+    <div>doubleCount: {{doubleCount}}</div>
+    <button @click="count++">Add</button>
+  \`,
+  data() {
+    return {
+      count: 1,
+      doubleCount: 2
+    }
+  },
+  watch: {
+    count(val) {
+      this.doubleCount = val * 2
+    }
+  }
+}`,
+      },
+      {
+        title: 'React',
+        html: '/watch/react.html',
+        code: `
+const App = () => {
+  const [count, setCount] = useState(1)
+  const [doubleCount, setDoubleCount] = useState(1)
+  useEffect(() => {
+    setDoubleCount(count * 2)
+  }, [count])
+  return (
+    <div>
+      <div>count: {count}</div>
+      <div>doubleCount: {doubleCount}</div>
+      <button onClick={() => setCount(count + 1)}>Add</button>
+    </div>
+  )
+}`,
+      },
+    ],
+  },
 ]

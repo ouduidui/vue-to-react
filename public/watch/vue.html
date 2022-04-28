@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+</head>
+<body>
+  <div id="root"></div>
+  
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const App = {
+      template: `
+        <div>count: {{count}}</div>
+        <div>doubleCount: {{doubleCount}}</div>
+        <button @click="count++">Add</button>
+      `,
+      data() {
+        return {
+          count: 1,
+          doubleCount: 2
+        }
+      },
+      watch: {
+        count(val) {
+          this.doubleCount = val * 2
+        }
+      }
+    }
+
+    Vue.createApp(App).mount('#root')
+  </script>
+</body>
+</html>
