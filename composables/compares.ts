@@ -31,4 +31,40 @@ const App = () => {
       },
     ],
   },
+  {
+    id: 'v-if',
+    label: 'v-if',
+    data: [
+      {
+        title: 'Vue',
+        html: '/vIf/vue.html',
+        code: `
+const App = {
+  template: \`
+    <button @click="isShow = !isShow">Toggle</button>
+    <div v-if="isShow">HelloWorld</div>
+  \`,
+  data() {
+    return {
+      isShow: true
+    }
+  },
+}`,
+      },
+      {
+        title: 'React',
+        html: '/vIf/react.html',
+        code: `
+const App = () => {
+  const [isShow, setIsShow] = useState(true);
+  return (
+    <div>
+      <button onClick={() => setIsShow(!isShow)}>Toggle</button>
+      {isShow ? <div>HelloWorld</div> : '' }
+    </div>
+    )
+}`,
+      },
+    ],
+  },
 ]

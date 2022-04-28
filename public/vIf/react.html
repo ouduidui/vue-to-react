@@ -13,8 +13,16 @@
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   <script type="text/babel">
+    const useState = React.useState
+    
     const App = () => {
-      return (<h1>Hello, world!</h1>)
+      const [isShow, setIsShow] = useState(true);
+      return (
+        <div>
+          <button onClick={() => setIsShow(!isShow)}>Toggle</button>
+          {isShow ? <div>HelloWorld</div> : '' }
+        </div>
+        )
     }
     ReactDOM.createRoot(document.getElementById('root')).render(<App />)
   </script>
