@@ -430,4 +430,58 @@ const App = () => {
       },
     ],
   },
+  {
+    id: 'emit',
+    label: 'emit',
+    data: [
+      {
+        title: 'Vue',
+        html: '/emit/vue.html',
+        code: `
+const Comp = {
+  name: 'Comp',
+  template: '<button @click="add">Add</button>',
+  methods: {
+    add() {
+      this.$emit('add')
+    }
+  }
+}
+
+const App = {
+  template: \`
+  <div>{{ count }}</div>
+  <Comp @add="count++" />
+  \`,
+  components: { Comp },
+  data() {
+    return {
+      count: 1
+    }
+  }
+}`,
+      },
+      {
+        title: 'React',
+        html: '/emit/react.html',
+        code: `
+const Comp = (props) => {
+  const add = () => {
+    props.onAdd()
+  }
+  return (<button onClick={add}>Add</button>)
+}
+
+const App = () => {
+  const [count, setCount] = React.useState(1)
+  return (
+    <div>
+      <div>{ count }</div>
+      <Comp onAdd={() => setCount(count + 1)} />
+    </div>
+    )
+}`,
+      },
+    ],
+  },
 ]
