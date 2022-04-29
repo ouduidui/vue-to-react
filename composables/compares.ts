@@ -231,4 +231,36 @@ const App = () => {
       },
     ],
   },
+  {
+    id: 'v-bind',
+    label: 'v-bind',
+    data: [
+      {
+        title: 'Vue',
+        html: '/vBind/vue.html',
+        code: `
+const App = {
+  template: '<h1 v-bind:style="{color, background}">HelloWorld</h1>',
+  data() {
+    return {
+      color: 'red',
+      background: '#333'
+    }
+  },
+}`,
+      },
+      {
+        title: 'React',
+        html: '/vBind/react.html',
+        code: `
+const App = () => {
+  const [color, setColor] =  useState('red')
+  const [background, setBackground] = useState('#333')
+  return (
+    <h1 style={{color, background}}>HelloWorld</h1>
+    )
+}`,
+      },
+    ],
+  },
 ]
