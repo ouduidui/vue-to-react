@@ -397,4 +397,37 @@ const App = () => {
       },
     ],
   },
+  {
+    id: 'props',
+    label: 'props',
+    data: [
+      {
+        title: 'Vue',
+        html: '/props/vue.html',
+        code: `
+const Comp = {
+  name: 'Comp',
+  template: '<h1>{{msg}}</h1>',
+  props: ['msg']
+}
+
+const App = {
+  template: '<Comp msg="HelloWorld" />',
+  components: { Comp },
+}`,
+      },
+      {
+        title: 'React',
+        html: '/props/react.html',
+        code: `
+const Comp = (props) => {
+  return (<h1>{ props.msg }</h1>)
+}
+
+const App = () => {
+  return (<Comp msg="HelloWorld" />)
+}`,
+      },
+    ],
+  },
 ]
