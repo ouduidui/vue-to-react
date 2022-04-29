@@ -8,37 +8,37 @@ interface CompareType {
   }[]
 }
 
-export const compares: CompareType[] = [
-  {
-    id: 'hello-world',
-    label: 'Hello World',
-    data: [
-      {
-        title: 'Vue',
-        html: '/helloworld/vue.html',
-        code: `
+const helloWorld: CompareType = {
+  id: 'hello-world',
+  label: 'Hello World',
+  data: [
+    {
+      title: 'Vue',
+      html: '/helloworld/vue.html',
+      code: `
 const App = {
   template: <h1>Hello, world!</h1>',
 }`,
-      },
-      {
-        title: 'React',
-        html: '/helloworld/react.html',
-        code: `
+    },
+    {
+      title: 'React',
+      html: '/helloworld/react.html',
+      code: `
 const App = () => {
   return (<h1>Hello, world!</h1>)
 }`,
-      },
-    ],
-  },
-  {
-    id: 'v-if',
-    label: 'v-if',
-    data: [
-      {
-        title: 'Vue',
-        html: '/vIf/vue.html',
-        code: `
+    },
+  ],
+}
+
+const vIf: CompareType = {
+  id: 'v-if',
+  label: 'v-if',
+  data: [
+    {
+      title: 'Vue',
+      html: '/vIf/vue.html',
+      code: `
 const App = {
   template: \`
     <button @click="isShow = !isShow">Toggle</button>
@@ -50,11 +50,11 @@ const App = {
     }
   },
 }`,
-      },
-      {
-        title: 'React',
-        html: '/vIf/react.html',
-        code: `
+    },
+    {
+      title: 'React',
+      html: '/vIf/react.html',
+      code: `
 const App = () => {
   const [isShow, setIsShow] = useState(true);
   return (
@@ -64,17 +64,18 @@ const App = () => {
     </div>
     )
 }`,
-      },
-    ],
-  },
-  {
-    id: 'v-show',
-    label: 'v-show',
-    data: [
-      {
-        title: 'Vue',
-        html: '/vShow/vue.html',
-        code: `
+    },
+  ],
+}
+
+const vShow: CompareType = {
+  id: 'v-show',
+  label: 'v-show',
+  data: [
+    {
+      title: 'Vue',
+      html: '/vShow/vue.html',
+      code: `
 const App = {
   template: \`
     <button @click="isShow = !isShow">Toggle</button>
@@ -86,11 +87,11 @@ const App = {
     }
   },
 }`,
-      },
-      {
-        title: 'React',
-        html: '/vShow/react.html',
-        code: `
+    },
+    {
+      title: 'React',
+      html: '/vShow/react.html',
+      code: `
 const App = () => {
   const [isShow, setIsShow] = useState(true);
   return (
@@ -100,17 +101,18 @@ const App = () => {
     </div>
     )
 }`,
-      },
-    ],
-  },
-  {
-    id: 'v-for',
-    label: 'v-for',
-    data: [
-      {
-        title: 'Vue',
-        html: '/vFor/vue.html',
-        code: `
+    },
+  ],
+}
+
+const vFor: CompareType = {
+  id: 'v-for',
+  label: 'v-for',
+  data: [
+    {
+      title: 'Vue',
+      html: '/vFor/vue.html',
+      code: `
 const App = {
   template: \`
     <li v-for="(item, index) in arr" :key="key">
@@ -123,11 +125,11 @@ const App = {
     }
   }
 }`,
-      },
-      {
-        title: 'React',
-        html: '/vFor/react.html',
-        code: `
+    },
+    {
+      title: 'React',
+      html: '/vFor/react.html',
+      code: `
 const App = () => {
   const arr = [1,2,3,4,5]
   return arr.map((item, index) => (
@@ -136,17 +138,18 @@ const App = () => {
       </li>
     ))
 }`,
-      },
-    ],
-  },
-  {
-    id: 'computed',
-    label: 'computed',
-    data: [
-      {
-        title: 'Vue',
-        html: '/computed/vue.html',
-        code: `
+    },
+  ],
+}
+
+const computed: CompareType = {
+  id: 'computed',
+  label: 'computed',
+  data: [
+    {
+      title: 'Vue',
+      html: '/computed/vue.html',
+      code: `
 const App = {
   template: \`
     <div>count: {{count}}</div>
@@ -164,11 +167,11 @@ const App = {
     }
   }
 }`,
-      },
-      {
-        title: 'React',
-        html: '/computed/react.html',
-        code: `
+    },
+    {
+      title: 'React',
+      html: '/computed/react.html',
+      code: `
 const App = () => {
   const [count, setCount] = useState(1)
   const doubleCount = useMemo(() => count * 2, [count])
@@ -180,17 +183,18 @@ const App = () => {
     </div>
   )
 }`,
-      },
-    ],
-  },
-  {
-    id: 'watch',
-    label: 'watch',
-    data: [
-      {
-        title: 'Vue',
-        html: '/watch/vue.html',
-        code: `
+    },
+  ],
+}
+
+const watch: CompareType = {
+  id: 'watch',
+  label: 'watch',
+  data: [
+    {
+      title: 'Vue',
+      html: '/watch/vue.html',
+      code: `
 const App = {
   template: \`
     <div>count: {{count}}</div>
@@ -209,11 +213,11 @@ const App = {
     }
   }
 }`,
-      },
-      {
-        title: 'React',
-        html: '/watch/react.html',
-        code: `
+    },
+    {
+      title: 'React',
+      html: '/watch/react.html',
+      code: `
 const App = () => {
   const [count, setCount] = useState(1)
   const [doubleCount, setDoubleCount] = useState(1)
@@ -228,17 +232,18 @@ const App = () => {
     </div>
   )
 }`,
-      },
-    ],
-  },
-  {
-    id: 'v-bind',
-    label: 'v-bind',
-    data: [
-      {
-        title: 'Vue',
-        html: '/vBind/vue.html',
-        code: `
+    },
+  ],
+}
+
+const vBind: CompareType = {
+  id: 'v-bind',
+  label: 'v-bind',
+  data: [
+    {
+      title: 'Vue',
+      html: '/vBind/vue.html',
+      code: `
 const App = {
   template: '<h1 v-bind:style="{color, background}">HelloWorld</h1>',
   data() {
@@ -248,11 +253,11 @@ const App = {
     }
   },
 }`,
-      },
-      {
-        title: 'React',
-        html: '/vBind/react.html',
-        code: `
+    },
+    {
+      title: 'React',
+      html: '/vBind/react.html',
+      code: `
 const App = () => {
   const [color, setColor] =  useState('red')
   const [background, setBackground] = useState('#333')
@@ -260,17 +265,18 @@ const App = () => {
     <h1 style={{color, background}}>HelloWorld</h1>
     )
 }`,
-      },
-    ],
-  },
-  {
-    id: 'v-on',
-    label: 'v-on',
-    data: [
-      {
-        title: 'Vue',
-        html: '/vOn/vue.html',
-        code: `
+    },
+  ],
+}
+
+const vOn: CompareType = {
+  id: 'v-on',
+  label: 'v-on',
+  data: [
+    {
+      title: 'Vue',
+      html: '/vOn/vue.html',
+      code: `
 const App = {
   template: \`
   <div>{{count}}</div>
@@ -287,11 +293,11 @@ const App = {
     }
   }
 }`,
-      },
-      {
-        title: 'React',
-        html: '/vOn/react.html',
-        code: `
+    },
+    {
+      title: 'React',
+      html: '/vOn/react.html',
+      code: `
 const App = () => {
   const [count, setCount] =  useState(1)
   const add = () => {
@@ -304,17 +310,18 @@ const App = () => {
     </div>
     )
 }`,
-      },
-    ],
-  },
-  {
-    id: 'v-model',
-    label: 'v-model',
-    data: [
-      {
-        title: 'Vue',
-        html: '/vModel/vue.html',
-        code: `
+    },
+  ],
+}
+
+const vModel: CompareType = {
+  id: 'v-model',
+  label: 'v-model',
+  data: [
+    {
+      title: 'Vue',
+      html: '/vModel/vue.html',
+      code: `
 const App = {
   template: \`
   <input type="text" v-model="msg" />
@@ -326,11 +333,11 @@ const App = {
     }
   },
 }`,
-      },
-      {
-        title: 'React',
-        html: '/vModel/react.html',
-        code: `
+    },
+    {
+      title: 'React',
+      html: '/vModel/react.html',
+      code: `
 const App = () => {
   const [msg, setMsg] =  useState('')
   const change = (e) => {
@@ -343,17 +350,18 @@ const App = () => {
     </div>
     )
 }`,
-      },
-    ],
-  },
-  {
-    id: 'click-stop',
-    label: '@click.stop',
-    data: [
-      {
-        title: 'Vue',
-        html: '/clickStop/vue.html',
-        code: `
+    },
+  ],
+}
+
+const clickStop: CompareType = {
+  id: 'click-stop',
+  label: '@click.stop',
+  data: [
+    {
+      title: 'Vue',
+      html: '/clickStop/vue.html',
+      code: `
 const App = {
   template: \`
   <div>{{count}}</div>
@@ -368,11 +376,11 @@ const App = {
     }
   },
 }`,
-      },
-      {
-        title: 'React',
-        html: '/clickStop/react.html',
-        code: `
+    },
+    {
+      title: 'React',
+      html: '/clickStop/react.html',
+      code: `
 const App = () => {
   const [count, setCount] =  useState(1)
   const add = () => {
@@ -394,17 +402,18 @@ const App = () => {
     </div>
     )
 }`,
-      },
-    ],
-  },
-  {
-    id: 'props',
-    label: 'props',
-    data: [
-      {
-        title: 'Vue',
-        html: '/props/vue.html',
-        code: `
+    },
+  ],
+}
+
+const props: CompareType = {
+  id: 'props',
+  label: 'props',
+  data: [
+    {
+      title: 'Vue',
+      html: '/props/vue.html',
+      code: `
 const Comp = {
   name: 'Comp',
   template: '<h1>{{msg}}</h1>',
@@ -415,11 +424,11 @@ const App = {
   template: '<Comp msg="HelloWorld" />',
   components: { Comp },
 }`,
-      },
-      {
-        title: 'React',
-        html: '/props/react.html',
-        code: `
+    },
+    {
+      title: 'React',
+      html: '/props/react.html',
+      code: `
 const Comp = (props) => {
   return (<h1>{ props.msg }</h1>)
 }
@@ -427,17 +436,18 @@ const Comp = (props) => {
 const App = () => {
   return (<Comp msg="HelloWorld" />)
 }`,
-      },
-    ],
-  },
-  {
-    id: 'emit',
-    label: 'emit',
-    data: [
-      {
-        title: 'Vue',
-        html: '/emit/vue.html',
-        code: `
+    },
+  ],
+}
+
+const emit: CompareType = {
+  id: 'emit',
+  label: 'emit',
+  data: [
+    {
+      title: 'Vue',
+      html: '/emit/vue.html',
+      code: `
 const Comp = {
   name: 'Comp',
   template: '<button @click="add">Add</button>',
@@ -460,11 +470,11 @@ const App = {
     }
   }
 }`,
-      },
-      {
-        title: 'React',
-        html: '/emit/react.html',
-        code: `
+    },
+    {
+      title: 'React',
+      html: '/emit/react.html',
+      code: `
 const Comp = (props) => {
   const add = () => {
     props.onAdd()
@@ -481,7 +491,10 @@ const App = () => {
     </div>
     )
 }`,
-      },
-    ],
-  },
+    },
+  ],
+}
+
+export const compares: CompareType[] = [
+  helloWorld, vIf, vShow, vFor, computed, watch, vBind, vOn, vModel, clickStop, props, emit,
 ]
