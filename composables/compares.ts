@@ -566,6 +566,52 @@ const App = () => {
   ],
 }
 
+const provideAndInject: CompareType = {
+  id: 'provideAndInject',
+  label: 'provide/inject',
+  data: [
+    {
+      title: 'Vue',
+      html: '/provideAndInject/vue.html',
+      code: `
+const Comp = {
+  name: 'Comp',
+  template: '<h1>{{msg}}</h1>',
+  inject: ['msg'],
+}
+
+const App = {
+  template: '<Comp />',
+  components: {Comp},
+  provide: {
+    msg: 'HelloWorld'
+  }
+}`,
+    },
+    {
+      title: 'React',
+      html: '/provideAndInject/react.html',
+      code: `
+const MsgContext = createContext({
+  msg: ''
+})
+
+const Comp = () => {
+  const {msg} = useContext(MsgContext)
+  return (<h1>{ msg }</h1>)
+}
+
+const App = () => {
+  return (
+    <MsgContext.Provider value={{msg: 'HelloWorld'}}>
+      <Comp />
+    </MsgContext.Provider>
+  )
+}`,
+    },
+  ],
+}
+
 export const compares: CompareType[] = [
-  helloWorld, vIf, vShow, vFor, computed, watch, vBind, vOn, vModel, clickStop, props, emit, refs,
+  helloWorld, vIf, vShow, vFor, computed, watch, vBind, vOn, vModel, clickStop, props, emit, refs, provideAndInject,
 ]
