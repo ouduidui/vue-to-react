@@ -2,7 +2,7 @@
 
 <template>
   <div flex="~ col" min-h-screen select-none pt-10>
-    <div flex-1 container m-auto>
+    <div flex-1 m-auto>
       <slot />
     </div>
     <Footer />
