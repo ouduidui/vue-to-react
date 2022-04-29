@@ -307,4 +307,43 @@ const App = () => {
       },
     ],
   },
+  {
+    id: 'v-model',
+    label: 'v-model',
+    data: [
+      {
+        title: 'Vue',
+        html: '/vModel/vue.html',
+        code: `
+const App = {
+  template: \`
+  <input type="text" v-model="msg" />
+  <div>msg: {{ msg }}</div>
+  \`,
+  data() {
+    return {
+      msg: '',
+    }
+  },
+}`,
+      },
+      {
+        title: 'React',
+        html: '/vModel/react.html',
+        code: `
+const App = () => {
+  const [msg, setMsg] =  useState('')
+  const change = (e) => {
+    setMsg(e.target.value)
+  }
+  return (
+    <div>
+      <input type="text" value={msg} onChange={change} />
+      <div>msg: { msg }</div>
+    </div>
+    )
+}`,
+      },
+    ],
+  },
 ]
