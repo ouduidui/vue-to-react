@@ -346,4 +346,55 @@ const App = () => {
       },
     ],
   },
+  {
+    id: 'click-stop',
+    label: '@click.stop',
+    data: [
+      {
+        title: 'Vue',
+        html: '/clickStop/vue.html',
+        code: `
+const App = {
+  template: \`
+  <div>{{count}}</div>
+  <button @click="count += 1">
+    +1
+    <button @click.stop="count *= 10">×10</button>
+  </button>
+  \`,
+  data() {
+    return {
+      count: 1,
+    }
+  },
+}`,
+      },
+      {
+        title: 'React',
+        html: '/clickStop/react.html',
+        code: `
+const App = () => {
+  const [count, setCount] =  useState(1)
+  const add = () => {
+    setCount(count + 1)
+  }
+
+  const multi = (e) => {
+    e.stopPropagation()
+    setCount(count * 10)
+  }
+  
+  return (
+    <div>
+      <div>{ count }</div>
+      <button onClick={add}>
+        +1
+        <button onClick={multi}>×10</button>
+      </button>
+    </div>
+    )
+}`,
+      },
+    ],
+  },
 ]
