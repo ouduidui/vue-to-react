@@ -11,16 +11,23 @@ defineProps<{
   }
 }>()
 
+const isMobile = ref(false)
+
+onMounted(() => {
+  isMobile.value = window.innerWidth < 768
+})
 </script>
 
 <template>
   <div font-mono text="2xl center" mb-2>
     {{ compare.label }}
   </div>
-  <div font-mono grid="~ cols-2" gap="x-10 y-5" w-90vw mb-20>
+  <div font-mono w-90vw mb-20
+  :class="isMobile ? '' : 'grid grid-cols-2 gap-x-10'" >
     <div
       v-for="(item, index) in compare.data"
       :key="index"
+      :class="isMobile ? 'mb-5' : ''"
     >
       <div text="xl center" pb-3>
         {{ item.title }}
