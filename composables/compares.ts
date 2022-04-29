@@ -97,7 +97,7 @@ const App = () => {
   return (
     <div>
       <button onClick={() => setIsShow(!isShow)}>Toggle</button>
-      {isShow ? <div>HelloWorld</div> : '' }
+      <div style={{display: isShow ? '' : 'none'}}>HelloWorld</div>
     </div>
     )
 }`,
