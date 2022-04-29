@@ -1,8 +1,5 @@
 <script setup lang="ts">
 import { compares } from '~/composables/compares'
-useHead({
-  title: 'Vue to React',
-})
 </script>
 
 <template>
