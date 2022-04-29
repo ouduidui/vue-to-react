@@ -495,6 +495,77 @@ const App = () => {
   ],
 }
 
+const refs: CompareType = {
+  id: 'refs',
+  label: 'refs',
+  data: [
+    {
+      title: 'Vue',
+      html: '/refs/vue.html',
+      code: `
+const Comp = {
+  name: 'Comp',
+  template: '<div>{{ count }}</div>',
+  data() {
+    return {
+      count: 1
+    }
+  },
+  methods: {
+    add() {
+      this.count++
+    }
+  }
+}
+
+const App = {
+  template: \`
+  <Comp ref="compEl" />
+  <button @click="add">Add</button>
+  \`,
+  components: { Comp },
+  methods: {
+    add() {
+      this.$refs.compEl.add()
+    }
+  }
+}`,
+    },
+    {
+      title: 'React',
+      html: '/refs/react.html',
+      code: `
+const Comp = (props, ref) => {
+  const [count, setCount] = React.useState(1)
+  const add = () => {
+    setCount(count + 1)
+  }
+  useImperativeHandle(ref, () => ({
+    add
+  }))
+  return (<div>{ count }</div>)
+}
+
+const WrappedComp = forwardRef(Comp)
+
+const App = () => {
+  const compEl = useRef()
+
+  const add = () => {
+    compEl.current.add()
+  }
+
+  return (
+    <div>
+      <WrappedComp ref={compEl}  />
+      <button onClick={add}>Add</button>
+    </div>
+    )
+}`,
+    },
+  ],
+}
+
 export const compares: CompareType[] = [
-  helloWorld, vIf, vShow, vFor, computed, watch, vBind, vOn, vModel, clickStop, props, emit,
+  helloWorld, vIf, vShow, vFor, computed, watch, vBind, vOn, vModel, clickStop, props, emit, refs,
 ]

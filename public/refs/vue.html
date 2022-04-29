@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+</head>
+<body>
+  <div id="root"></div>
+  
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const Comp = {
+      name: 'Comp',
+      template: '<div>{{ count }}</div>',
+      data() {
+        return {
+          count: 1
+        }
+      },
+      methods: {
+        add() {
+          this.count++
+        }
+      }
+    }
+
+    const App = {
+      template: `
+      <Comp ref="compEl" />
+      <button @click="add">Add</button>
+      `,
+      components: { Comp },
+      methods: {
+        add() {
+          this.$refs.compEl.add()
+        }
+      }
+    }
+
+    Vue.createApp(App).mount('#root')
+  </script>
+</body>
+</html>
